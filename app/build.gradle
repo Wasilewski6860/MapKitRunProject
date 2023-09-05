@@ -1,0 +1,107 @@
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+
+    id 'kotlin-parcelize'
+    // Navigation
+    id 'androidx.navigation.safeargs.kotlin'
+    //Kotlin symbol processing  for Room
+    id("com.google.devtools.ksp")
+}
+
+android {
+    namespace 'com.example.mapkitproject'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.mapkitproject"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0-alpha03'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-service:2.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+    // LiveData(lifecycle)
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    // ViewModel(lifecycle)
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.7.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.7.1"
+    // Room libraries
+    implementation "androidx.room:room-runtime:2.5.2"
+    implementation "androidx.room:room-ktx:2.5.2"
+    //Kotlin symbol processing for Room
+    ksp "androidx.room:room-compiler:2.5.2"
+    //Koin
+    implementation "io.insert-koin:koin-core:3.4.2"
+    implementation "io.insert-koin:koin-android:3.4.2"
+    testImplementation "io.insert-koin:koin-test:3.4.2"
+
+
+    //Moshi
+    def moshiVersion = '1.13.0'
+
+    implementation "com.squareup.moshi:moshi-kotlin:1.13.0"
+    ksp "com.squareup.moshi:moshi-kotlin-codegen:1.13.0"
+
+
+
+    // Google Maps Location Services
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    // Easy Permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+//    // MPAndroidChart
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+//    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+// Keep other dependencies you have
+
+
+    implementation "com.yandex.android:maps.mobile:4.1.0-lite"
+
+    // MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+}

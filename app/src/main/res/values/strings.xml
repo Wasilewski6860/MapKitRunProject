@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MapKitProject</string>
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="yandex_maps_key" templateMergeStrategy="preserve" translatable="false">bf9689cc-7bfa-4d6e-9baa-72d6d03a2337</string>
+</resources>
