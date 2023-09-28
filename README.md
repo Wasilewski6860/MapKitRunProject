@@ -7,6 +7,7 @@ Designed for tracking and displaying running track, saving data about jogging (t
 - MVVM architecture pattern
 - Clean Architecture
 - Storing runs using Room database
+- Used IntentService for working with geolocation tracking
 - Uses MPAndroidChart to keep statistics.
 - Uses MapKit to display and work with the track.
 
