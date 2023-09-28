@@ -13,62 +13,39 @@ Designed for tracking and displaying running track, saving data about jogging (t
 # Gallery
 
 <li>
-  No images
+  No runs
 </li>
 <li>
-  <img src="screenshots/empty_main_screen.png" width="500">
+  <img src="screenshots/main_screen_empty.png" width="500">
 </li>
 <li>
-  Creating image 1
+  Statistics screen
 </li>
 <li>
-  <img src="screenshots/adding_image_no_tags.png" width="500">
+  <img src="screenshots/statistic_screen.png" width="500">
 </li>
 <li>
- Creating image 2
+ Settings screen
 </li>
 <li>
-  <img src="screenshots/adding_image_added_tags.png" width="500">
+  <img src="screenshots/settings_screen.png" width="500">
+</li>
+<li>
+  Starting tracking
+</li>
+<li>
+  <img src="screenshots/tracking_screen_start.png" width="500">
+</li>
+<li>
+  Finishing tracking
+</li>
+<li>
+  <img src="screenshots/tracking_screen_end.png" width="500">
 </li>
 <li>
   Created
 </li>
 <li>
-  <img src="screenshots/after_added.png" width="500">
+  <img src="screenshots/main_screen_added.png" width="500">
 </li>
-<li>
-  Second Image creating
-</li>
-<li>
-  <img src="screenshots/second_image_add.png" width="500">
-</li>
-<li>
-  Created
-</li>
-<li>
-  <img src="screenshots/two_images_added_all.png" width="500">
-</li>
-<li>
-  Adding "sea" tag
-</li>
-<li>
-  <img src="screenshots/sea_tag_added_tags.png" width="500">
-</li>
-<li>
-  Afted "sea" tag added
-</li>
-<li>
-  <img src="screenshots/sea_tag_after_added.png" width="500">
-</li>
-<li>
-  Adding "my" tag
-</li>
-<li>
-  <img src="screenshots/my_tag_selected_tags.png" width="500">
-</li>
-<li>
-  Afted "my" tag added
-</li>
-<li>
-  <img src="screenshots/after_my_selected.png" width="500">
-</li>
+
