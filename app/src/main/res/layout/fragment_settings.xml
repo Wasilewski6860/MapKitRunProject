@@ -6,54 +6,94 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:hint="Your Name"
+
         app:layout_constraintBottom_toTopOf="@+id/tilWeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxCornerRadiusBottomEnd="56dp"
+        app:boxCornerRadiusBottomStart="56dp"
+        app:boxCornerRadiusTopEnd="56dp"
+        app:boxCornerRadiusTopStart="56dp"
+        app:endIconCheckable="true"
+        android:fontFamily="serif"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:helperText="Change name"
+        app:helperTextEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Your Name"
-            android:inputType="textPersonName" />
-
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:fontFamily="serif" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilWeight"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:hint="Your Weight"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3">
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:boxCornerRadiusBottomEnd="56dp"
+        app:boxCornerRadiusBottomStart="56dp"
+        app:boxCornerRadiusTopEnd="56dp"
+        app:boxCornerRadiusTopStart="56dp"
+        app:endIconCheckable="true"
+        android:fontFamily="serif"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:helperText="Change weight"
+        app:helperTextEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etWeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Your Weight"
-            android:inputType="numberDecimal" />
-
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"
+            android:fontFamily="serif" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnApplyChanges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Apply Changes"
+
+
+        android:layout_width="match_parent"
+        android:fontFamily="serif"
+        android:layout_height="@dimen/long_buttons_height"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+
+        android:contentDescription="Add Picture"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilWeight" />
+        app:layout_constraintTop_toBottomOf="@+id/tilWeight"
+        app:circularflow_radiusInDP="20dp"
+        android:gravity="center"
+        android:text="Apply Changes"
+        android:textSize="24sp" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

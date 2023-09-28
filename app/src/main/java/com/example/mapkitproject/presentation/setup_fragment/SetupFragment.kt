@@ -46,7 +46,7 @@ class SetupFragment : Fragment(R.layout.fragment_setup) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        isFirstAppOpen = sharedPreferences.getBoolean(KEY_IS_FIRST, false)
+        isFirstAppOpen = sharedPreferences.getBoolean(KEY_IS_FIRST,false)
         if(!isFirstAppOpen) {
             val navOptions = NavOptions.Builder()
                 .setPopUpTo(R.id.setupFragment, true)

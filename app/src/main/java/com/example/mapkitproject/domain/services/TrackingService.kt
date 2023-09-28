@@ -38,7 +38,7 @@ class TrackingService : LifecycleService() {
     var isFirstRun = true
     var serviceKilled = false
 
-    lateinit var fusedLocationProviderClient : FusedLocationProviderClient
+    private lateinit var fusedLocationProviderClient : FusedLocationProviderClient
 
     private val timeRunInSeconds = MutableLiveData<Long>()
 

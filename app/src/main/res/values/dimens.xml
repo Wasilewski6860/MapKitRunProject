@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Cocktail item-->
+    <dimen name="card_text_margin_top">100dp</dimen>
+    <dimen name="cocktail_item_text_size">18sp</dimen>
+
+
+    <!--Cocktails screen-->
+    <dimen name="add_fab_custom_size">80dp</dimen>
+    <dimen name="error_message_text_size">22sp</dimen>
+    <dimen name="title_text_size">36sp</dimen>
+
+
+    <!--Details screen-->
+    <dimen name="body_text_size">16sp</dimen>
+    <dimen name="long_buttons_height">64dp</dimen>
+
+</resources>
