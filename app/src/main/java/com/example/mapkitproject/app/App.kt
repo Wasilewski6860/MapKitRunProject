@@ -1,6 +1,7 @@
 package com.example.mapkitproject.app
 
 import android.app.Application
+import android.widget.Toast
 import com.example.mapkitproject.R
 import com.example.mapkitproject.di.sharedPrefsModule
 import com.example.runappyt.di.dataModule
@@ -17,7 +18,12 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        MapKitFactory.setApiKey(R.string.yandex_maps_key.toString())
+//        MapKitFactory.setApiKey(R.string.yandex_maps_key.toString())
+
+        val toString = resources.getString(R.string.yandex_maps_key);
+        Toast.makeText(this, toString, Toast.LENGTH_SHORT).show()
+        println(toString)
+        MapKitFactory.setApiKey(toString)
         MapKitFactory.initialize(this)
         startKoin {
             androidContext(this@App)
