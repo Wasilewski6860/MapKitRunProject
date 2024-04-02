@@ -32,6 +32,7 @@ import com.example.mapkitproject.other.Constants.MAP_ZOOM
 import com.example.mapkitproject.other.Constants.POLYLINE_COLOR
 import com.example.mapkitproject.other.Constants.POLYLINE_WIDTH
 import com.example.mapkitproject.other.TrackingUtility
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -93,7 +94,6 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
         }
 
         addAllPolylines()
-
         subscribeToObservers()
     }
 
@@ -116,6 +116,19 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             curTimeInMillis = it
             val formattedTime = TrackingUtility.getFormattedStopWatchTime(curTimeInMillis, true)
             binding.tvTimer.text = formattedTime
+        })
+
+        TrackingService.distanceInMeters.observe(viewLifecycleOwner, Observer {
+            binding.tvDistance.text = (it/1000f).toString()
+            binding.tvCalories.text = ((0.75f * weight)*(it / 1000f)).toString()
+        })
+
+        TrackingService.distanceInMeters.observe(viewLifecycleOwner, Observer {
+            binding.tvDistance.text = (it/1000f).toString()
+        })
+
+        TrackingService.speedInMps.observe(viewLifecycleOwner, Observer {
+            binding.tvSpeed.text = it.toString()
         })
     }
 
@@ -253,14 +266,11 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             saveMediaToStorage(it)
         }
 
-
-
-
-
         var distanceInMeters = 0
         for(polyline in pathPoints) {
             distanceInMeters += TrackingUtility.calculatePolylineLength(polyline).toInt()
         }
+
         val avgSpeed = round((distanceInMeters / 1000f) / (curTimeInMillis / 1000f / 60 / 60) * 10) / 10f
         val dateTimestamp = Calendar.getInstance().timeInMillis
         val caloriesBurned = ((distanceInMeters / 1000f) * weight).toInt()
@@ -273,7 +283,6 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             Snackbar.LENGTH_LONG
         ).show()
         stopRun()
-
 
     }
 
@@ -424,4 +433,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
         super.onSaveInstanceState(outState)
 
     }
+
+
+
 }

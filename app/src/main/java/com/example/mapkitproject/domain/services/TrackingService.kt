@@ -1,5 +1,7 @@
 package com.example.mapkitproject.domain.services
 
+import kotlin.math.roundToInt
+
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -49,6 +51,8 @@ class TrackingService : LifecycleService() {
 
     companion object {
         val timeRunInMillis = MutableLiveData<Long>()
+        val speedInMps = MutableLiveData<Float>()
+        val distanceInMeters = MutableLiveData<Int>()
         val isTracking = MutableLiveData<Boolean>()
         val pathPoints = MutableLiveData<Polylines>()
     }
@@ -58,6 +62,8 @@ class TrackingService : LifecycleService() {
         pathPoints.postValue(mutableListOf())
         timeRunInSeconds.postValue(0L)
         timeRunInMillis.postValue(0L)
+        speedInMps.postValue(0F)
+        distanceInMeters.postValue(0)
     }
 
     override fun onCreate() {
@@ -238,10 +244,21 @@ class TrackingService : LifecycleService() {
                 last().add(pos)
                 pathPoints.postValue(this)
             }
+            if (pathPoints.value != null) {
+                for(polyline in pathPoints.value!!) {
+                    var temp = distanceInMeters.value
+                    temp = temp?.plus(TrackingUtility.calculatePolylineLength(polyline).toInt())
+                    temp.apply {
+                        distanceInMeters.postValue(this)
+                    }
+                }
+            }
+            speedInMps.postValue(location.speed)
         }
     }
 
     private fun addEmptyPolyline() = pathPoints.value?.apply {
+        add(mutableListOf())
         add(mutableListOf())
         pathPoints.postValue(this)
     } ?: pathPoints.postValue(mutableListOf(mutableListOf()))
